@@ -166,7 +166,7 @@ signed main() {
 
 | Platform | Profile / Link |
 |---|---|
-| 🟦 Codeforces | [your-handle]([https://codeforces.com/profile/your-handle](https://codeforces.com/profile/Nitinref)) |
+| 🟦 Codeforces | [your-handle](https://codeforces.com/profile/Nitinref) |
 | 🟨 LeetCode | [your-handle](https://leetcode.com/your-handle/) |
 | 🟩 AtCoder | [your-handle](https://atcoder.jp/users/your-handle) |
 | 🟧 CodeChef | [your-handle](https://www.codechef.com/users/your-handle) |
