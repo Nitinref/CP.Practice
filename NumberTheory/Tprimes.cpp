@@ -1,50 +1,48 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
-#include <cmath>
-#include <vector>
-#define NUMX 1000000
-vector<int> arr(NUMX + 1, 1);
 
-void preCompute()
-{
+#define int         long long
+#define pb          push_back
+#define all(x)      (x).begin(), (x).end()
+#define sz(x)       (int)(x).size()
+#define yes         cout << "YES\n"
+#define no          cout << "NO\n"
 
-    arr[0] = 0;
-    arr[1] = 0;
+const int MOD  = 1e9 + 7;
+const int INF  = 1e18;
 
-    for (int i = 2; i * i < arr.size(); i++)
-    {
-        if (arr[i] == 1)
-        {
-            for (int j = i * i; j < arr.size(); j += i)
-            {
-                arr[j] = 0;
+int solve(vector<int>& piles, int h) {
+    int k = 1;
+    while(true){
+        for(int pile:piles){
+     
+        int totalHours += (pile + k - 1) / k;
+
+               if(totalHours <= h){
+                return k; 
             }
+
+            k++;
+        
         }
     }
+   return k;
+
+
 }
 
-void Tprime(long long n)
-{
-    long long x = sqrt(n);
-    if (x * x == n && arr[x] == 1)
-    {
-        cout << "YES" << endl;
+signed main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int h ;
+    cin>>h;
+    vector<int>pile;
+    for(int i= 0;i<100000;i++){
+        cin>>pile[i];
     }
-    else
-    {
-        cout << "NO" << endl;
-    }
-}
 
-int main()
-{
-    int t;
-    preCompute();
-    cin >> t;
-    long long n;
-    while (t--)
-    {
-        cin >> n;
-        Tprime(n);
-    }
+  int ans =   solve(pile , h);
+  cout<<ans<<endl;
+
+    return 0;
 }
