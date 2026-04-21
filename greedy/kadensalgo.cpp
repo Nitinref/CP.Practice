@@ -12,39 +12,37 @@ const int MOD  = 1e9 + 7;
 const int INF  = 1e18;
 
 void solve(int n) {
-    priority_queue<int> q;
-
-    for(int i = 0; i < n; i++){
-        int x;
-        cin >> x;
-        q.push(-x);
+    vector<int>arr(n);
+    for(int i =0;i<n;i++){
+        cin>>arr[i];
     }
 
     int sum = 0;
+    int maxi = INT_MIN;
 
-    while(q.size() > 1){
-        int a = -q.top(); q.pop();
-        int b = -q.top(); q.pop();
+    for(int i =0;i<n;i++){
+        sum += arr[i];
+        maxi = max(sum , maxi);
 
-        int s = a + b;
-        sum += s;
+        if(sum < 0){
+            sum = 0;
+        }
 
-        q.push(-s);
+       
     }
 
-    cout << sum << endl;
+     cout<<maxi<<endl;
+
+    
 }
+
 signed main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
-    int t = 1;
-    cin >> t;  
-    int n;         // remove if single test case
-    while (t--){
-        cin>>n;
-        solve(n);
-    }
+    int n;
+    cin>>n;
+    solve(n);
 
     return 0;
 }

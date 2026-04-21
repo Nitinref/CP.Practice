@@ -11,39 +11,38 @@ using namespace std;
 const int MOD  = 1e9 + 7;
 const int INF  = 1e18;
 
-void solve(int n) {
-    priority_queue<int> q;
-
-    for(int i = 0; i < n; i++){
+void solve(int n , int k) {
+    priority_queue<int>pr;
+    for(int i = 0;i<n;i++){
         int x;
-        cin >> x;
-        q.push(-x);
+        cin>>x;
+        pr.push(x);
+    }
+    int sum =0;
+
+    while(k--){
+      int first = pr.top();
+      int ans =  pr.top() / 2;
+      pr.pop();
+      sum += first;
+      pr.push(ans);
     }
 
-    int sum = 0;
-
-    while(q.size() > 1){
-        int a = -q.top(); q.pop();
-        int b = -q.top(); q.pop();
-
-        int s = a + b;
-        sum += s;
-
-        q.push(-s);
-    }
-
-    cout << sum << endl;
+    cout<<sum<<endl;
+    
 }
+
 signed main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
     int t = 1;
-    cin >> t;  
-    int n;         // remove if single test case
+    cin >> t;
+    int k;
+    int n;        
     while (t--){
-        cin>>n;
-        solve(n);
+        cin>>n>>k;
+        solve(n ,k);
     }
 
     return 0;

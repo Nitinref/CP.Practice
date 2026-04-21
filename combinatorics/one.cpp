@@ -12,11 +12,10 @@ const int MOD  = 1e9 + 7;
 const int INF  = 1e18;
 
 int arr[1000100];
-
 void pre(){
     arr[0] =1;
     for(int i = 1;i<1000000;i++){
-        arr[i] = arr[i -1] * i; 
+        arr[i] = (arr[i -1] * i)%MOD;
     }
 }
 
@@ -34,7 +33,7 @@ int binpow(int n  ,int p ){
 }
 
 int inv(int n){
-    return binpow(n  , MOD-1);
+    return binpow(n  , MOD-2);
 }
 
 
@@ -45,7 +44,7 @@ int solve(int n , int r){
     }
 
     int num = arr[n];
-    int den = arr[r] * arr[n-r];
+    int den = (arr[r] * arr[n-r])%MOD;
     int den1 = inv(den);
 
     int ans = (num * den1)%MOD;
@@ -57,11 +56,16 @@ signed main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
      pre();
-    int n;
-    int r;
-    cin>>n>>r;
-   int ans =  solve(n , r);
-   cout<<ans<<endl;
+     int t;
+     cin>>t;
+    while(t--){
+        int n;
+    cin>>n;
+   int ans =  solve(n , 4);
+   cout<<ans%MOD<<endl;
+
+
+    }
 
     return 0;
 }
