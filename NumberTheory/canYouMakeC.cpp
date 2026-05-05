@@ -1,4 +1,7 @@
 // https://maang.in/problems/Can-You-Make-C-66?resourceUrl=pl4821-rs66&returnUrl=%5B%22%2Fcohorts%2FAZ-Premium-Cohort-13-64%3Ftab%3Dassignments%22%5D
+// linear dephomine equation 
+// A⋅x+B⋅y=C
+//  Kya koi integers x,y (negative bhi ho sakte hain) exist karte hain?
 #include <iostream>
 using namespace std;
 long long mod = 1e9+7;
