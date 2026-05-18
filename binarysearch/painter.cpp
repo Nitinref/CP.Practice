@@ -64,7 +64,7 @@ void solve()
 
     cout<<ans;
 }
-
+ 
 signed main()
 {
     ios_base::sync_with_stdio(false);

@@ -11,28 +11,42 @@ using namespace std;
 const int MOD  = 1e9 + 7;
 const int INF  = 1e18;
 
-void solve(int n) {
+void solve() {
+
+    int n;
+    cin>>n;
     vector<int>arr(n);
-    for(int i =0;i<n;i++){
-        cin>>arr[i];
+    int k;
+    cin>>k;
+   
+for(int i = 0;i<n;i++){
+    cin>>arr[i];
+}
+
+int h = -1;
+int l = 0;
+int sum = 0;
+int length = 0;
+
+while(l<n){
+    while(h+1<n && arr[h+1] + sum < k ){
+        h++;
+        sum+=arr[h];
+        length = max(length , h-l+1);
     }
 
-    int sum = 0;
-    int maxi = INT_MIN;
-    *max_element
-
-    for(int i =0;i<n;i++){
-        sum += arr[i];
-        maxi = max(sum , maxi);
-
-        if(sum < 0){
-            sum = 0;
-        }
-
-       
+    if(l>h){
+        l++;
+        h = l-1;
+    }else{
+        sum-=arr[l];
+        l++;
     }
 
-     cout<<maxi<<endl;
+}
+
+
+ cout<<length<<endl;
 
     
 }
@@ -41,9 +55,7 @@ signed main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
-    int n;
-    cin>>n;
-    solve(n);
+     solve();
 
     return 0;
 }

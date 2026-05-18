@@ -11,39 +11,21 @@ using namespace std;
 const int MOD  = 1e9 + 7;
 const int INF  = 1e18;
 
-void solve(int n) {
-    vector<int>arr(n);
-    for(int i =0;i<n;i++){
-        cin>>arr[i];
-    }
+void solve() {
 
-    int sum = 0;
-    int maxi = INT_MIN;
-    *max_element
+    string s,t;
+    cin>>s;
+    cin>>t;
+    sort(t.begin() , t.end());
 
-    for(int i =0;i<n;i++){
-        sum += arr[i];
-        maxi = max(sum , maxi);
-
-        if(sum < 0){
-            sum = 0;
-        }
-
-       
-    }
-
-     cout<<maxi<<endl;
-
+     cout<<(s==t ?"YES":"NO")<<endl;
     
 }
 
 signed main() {
     ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-
-    int n;
-    cin>>n;
-    solve(n);
+    cin.tie(NULL); 
+    solve();
 
     return 0;
 }

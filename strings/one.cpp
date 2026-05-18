@@ -12,29 +12,19 @@ const int MOD  = 1e9 + 7;
 const int INF  = 1e18;
 
 void solve(int n) {
-    vector<int>arr(n);
-    for(int i =0;i<n;i++){
-        cin>>arr[i];
-    }
+    vector<string>s1;
+    vector<string>s2;
+    for(int i = 0;i<n;i++)cin>>s1[i];
+    for(int i = 0;i<n;i++)cin>>s2[i];
 
-    int sum = 0;
-    int maxi = INT_MIN;
-    *max_element
-
-    for(int i =0;i<n;i++){
-        sum += arr[i];
-        maxi = max(sum , maxi);
-
-        if(sum < 0){
-            sum = 0;
-        }
-
-       
-    }
-
-     cout<<maxi<<endl;
+    int start;
+    cin>>start;
+    int end;
+    cin>>end;
+   
 
     
+
 }
 
 signed main() {
